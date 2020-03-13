@@ -43,5 +43,8 @@ int main() {
         push(a);
         cont++;
   }
+  cont--;
+  a = pop();
+  printf("%c",a);
   return 0;
 }
