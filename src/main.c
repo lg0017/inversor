@@ -36,11 +36,23 @@ int main() {
   /* Tratando a entrada */
   while(a != '\n'){
         a = buffer[cont];
+        /* Adicionando a pilha */
         push(a);
         cont++;
   }
+
+  /* Ajustando a pilha */
   cont--;
   a = pop();
-  printf("%c",a);
+
+  /* Tratando a saida */
+  while(cont != 0){
+    /* Removendo da pilha */
+    a = pop();
+    printf("%c", a);
+    cont--;
+  }
+  printf("\n");
+
   return 0;
 }
