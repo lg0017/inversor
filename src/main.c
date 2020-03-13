@@ -25,12 +25,12 @@ char pop(char *pilha, int (*n_pilha)) {
 
 int main() {
   char a = '0';
+  char b = '0';
+  char c = '0';
   int cont = 0;
-  int cont2 = 0;
+  int contaux = 0;
   char pilha_1[100];
-  char pilha_2[100];
   int n_pilha_1=0;
-  int n_pilha_2=0;
 
   char buffer[tam_buffer];
   fgets(buffer, tam_buffer, stdin);
@@ -38,32 +38,18 @@ int main() {
   /* Tratando a entrada */
   while(a != '\n'){
         a = buffer[cont];
-        /* Adicionando a pilha */
         push(pilha_1, &n_pilha_1, a);
-        cont++;
+	cont++;
+        if(a == ' ' || a == '\n'){
+		c = pop(pilha_1, &n_pilha_1);
+		while(n_pilha_1 != 0){
+		        b = pop(pilha_1, &n_pilha_1);
+			printf("%c",b);
+	        }
+		printf("%c",c);
+	}
+        
   }
-
-  /* Ajustando a pilha */
-  cont--;
-  a = pop(pilha1, &n_pilha_1);
-
-  /* Utilizando pilha auxiliar */
-  cont2 = cont;
-  while(cont2 != 0){
-    /* Removendo da pilha */
-    a = pop(pilha1, &n_pilha_1);
-    push(pilha_2, &n_pilha_2, a);
-    cont2--;
-  }
-
-  /* Tratando a saida */
-  while(cont != 0){
-    /* Removendo da pilha */
-    a = pop();
-    printf("%c", a);
-    cont--;
-  }
-  printf("\n");
 
   return 0;
 }
