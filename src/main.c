@@ -40,6 +40,7 @@ int main() {
   /* Tratando a entrada */
   while(a != '\n'){
         a = buffer[cont];
+        push(a);
         cont++;
   }
   return 0;
