@@ -3,6 +3,30 @@
  * RA:
  */
 
+const int tam_buffer=100;
+char pilha[100];
+int n_pilha=0;
+
+void push(char c) {
+
+/* Insere caractere c na pilha */
+  if (n_pilha < tam_buffer) {
+    pilha[n_pilha]=c;
+    n_pilha++;
+  }
+}
+
+char pop() {
+
+/* Remove caractere do topo da pilha */
+  char c;
+  if (n_pilha>0) {
+    n_pilha--;
+    c = pilha[n_pilha];
+  }
+  return c;
+}
+
 #include <stdio.h>
 const int tam_buffer=100;
 
