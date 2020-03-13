@@ -2,7 +2,7 @@
  * Nome:
  * RA:
  */
-
+#include <stdio.h>
 const int tam_buffer=100;
 char pilha[100];
 int n_pilha=0;
