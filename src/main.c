@@ -4,25 +4,21 @@
  */
 #include <stdio.h>
 const int tam_buffer=100;
-char pilha[100];
-int n_pilha=0;
 
-void push(char c) {
-
+void push(char *pilha, int *n_pilha, char c) {
 /* Insere caractere c na pilha */
-  if (n_pilha < tam_buffer) {
-    pilha[n_pilha]=c;
-    n_pilha++;
+  if ((*n_pilha) < 10) {
+    pilha[*n_pilha]=c;
+    (*n_pilha)++;
   }
 }
 
-char pop() {
-
+char pop(char *pilha, int (*n_pilha)) {
 /* Remove caractere do topo da pilha */
   char c;
-  if (n_pilha>0) {
-    n_pilha--;
-    c = pilha[n_pilha];
+  if ((*n_pilha)>0) {
+    (*n_pilha)--;
+    c = pilha[*n_pilha];
   }
   return c;
 }
@@ -30,6 +26,11 @@ char pop() {
 int main() {
   char a = '0';
   int cont = 0;
+  char pilha_1[100];
+  char pilha_2[100];
+  int n_pilha_1=0;
+  int n_pilha_2=0;
+
   char buffer[tam_buffer];
   fgets(buffer, tam_buffer, stdin);
 
