@@ -1,6 +1,6 @@
-/* Data de submissao:
- * Nome:
- * RA:
+/* Data de submissao: 13/03/2020
+ * Nome: Luiz Guilherme Silva Moreira
+ * RA: 202391
  */
 #include <stdio.h>
 const int tam_buffer=100;
@@ -35,7 +35,7 @@ int main() {
   char buffer[tam_buffer];
   fgets(buffer, tam_buffer, stdin);
 
-  /* Tratando a entrada */
+  /* Tratando a entrada e a saida */
   while(a != '\n'){
         a = buffer[cont];
         push(pilha_1, &n_pilha_1, a);
